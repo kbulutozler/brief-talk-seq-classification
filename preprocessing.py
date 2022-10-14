@@ -35,7 +35,7 @@ nltk.download('punkt')
 
 
 def tokenizer(text):
-    return word_tokenize(text)[:500]
+    return word_tokenize(text)
 
 def remove_punctuation(tokens):
     no_punctiation = [token for token in tokens if token not in punctuations]
@@ -111,8 +111,8 @@ train_dev_data= [item for item in dataset['train']]
 random.shuffle(train_dev_data)
 test_data = [item for item in dataset['test']]
 random.shuffle(test_data)
-train_data = train_dev_data[:10000]
-dev_data = train_dev_data[10000:12000]
+train_data = train_dev_data[:22000]
+dev_data = train_dev_data[22000:]
 
 df_train = convert_to_df(train_data)
 df_dev = convert_to_df(dev_data)
